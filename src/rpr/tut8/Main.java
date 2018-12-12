@@ -1,4 +1,4 @@
-package sample;
+package rpr.tut8;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
