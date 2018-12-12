@@ -1,0 +1,7 @@
+.poljeIspravno {
+    -fx-control-inner-background: lightgreen
+}
+
+.poljeNeispravno {
+    -fx-control-inner-background: #df0006
+}
