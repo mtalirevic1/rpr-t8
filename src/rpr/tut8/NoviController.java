@@ -39,22 +39,19 @@ public class NoviController {
         Runnable r = () -> {
             postanskiBroj.textProperty().bindBidirectional(text);
             postanskiBroj.getStyleClass().add("poljeNeispravno");
-            postanskiBroj.focusedProperty().addListener(new ChangeListener<Boolean>() {
-                @Override
-                public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                    try {
-                        if (!newValue) {
-                            if (validanPostanskiBroj(postanskiBroj.getText())) {
-                                postanskiBroj.getStyleClass().removeAll("poljeNeispravno");
-                                postanskiBroj.getStyleClass().add("poljeIspravno");
-                            } else {
-                                postanskiBroj.getStyleClass().removeAll("poljeIspravno");
-                                postanskiBroj.getStyleClass().add("poljeNeispravno");
-                            }
+            postanskiBroj.focusedProperty().addListener((observable, oldValue, newValue) -> {
+                try {
+                    if (!newValue) {
+                        if (validanPostanskiBroj(postanskiBroj.getText())) {
+                            postanskiBroj.getStyleClass().removeAll("poljeNeispravno");
+                            postanskiBroj.getStyleClass().add("poljeIspravno");
+                        } else {
+                            postanskiBroj.getStyleClass().removeAll("poljeIspravno");
+                            postanskiBroj.getStyleClass().add("poljeNeispravno");
                         }
-                    } catch (Exception e) {
-                        e.printStackTrace();
                     }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             });
         };

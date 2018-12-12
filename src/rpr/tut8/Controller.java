@@ -117,7 +117,7 @@ public class Controller {
         Parent root = null;
         try {
             Stage myStage = new Stage();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("noviprozor.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("sample2.fxml"));
             loader.load();
             noviController = loader.getController();
             myStage.setTitle("Slanje datoteke");
