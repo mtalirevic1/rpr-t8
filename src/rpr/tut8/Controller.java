@@ -9,10 +9,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -32,7 +29,7 @@ public class Controller {
     public ListView list;
     public List<String> result1;
     public Button stopButton;
-    public ProgressBar progressBar;
+    public ProgressIndicator progressIndicator;
     public boolean prekidanje = false;
     NoviController noviController;
     private Thread thread1, thread2;
@@ -41,7 +38,7 @@ public class Controller {
         text = new SimpleStringProperty("");
         lista = new SimpleListProperty<>();
         result1 = Collections.synchronizedList(new ArrayList<>());
-        progressBar = new ProgressBar(0);
+        progressIndicator = new ProgressIndicator(0);
     }
 
     @FXML
@@ -51,7 +48,7 @@ public class Controller {
         lista.set(FXCollections.observableArrayList(result1));
         stopButton.setDisable(true);
         prekidanje = false;
-        progressBar.setProgress(0);
+        progressIndicator.setProgress(0);
     }
 
     public void getFiles(File f) {
@@ -85,12 +82,12 @@ public class Controller {
             getFiles(new File(System.getProperty("user.home")));
         };
         Runnable r2 = () -> {
-            for (int i = 1; i <= 1000; i++) {
+            for (int i = 1; i <= 800; i++) {
                 if (prekidanje) {
-                    progressBar.setProgress(1000);
+                    progressIndicator.setProgress(800);
                     break;
                 }
-                progressBar.setProgress(i / 1000.0);
+                progressIndicator.setProgress(i / 800.0);
                 try {
                     Thread.sleep(10);
                 } catch (InterruptedException e) {
