@@ -80,6 +80,9 @@ public class Controller {
             searchField.setDisable(true);
             stopButton.setDisable(false);
             getFiles(new File(System.getProperty("user.home")));
+            searchBtn.setDisable(false);
+            searchField.setDisable(false);
+            stopButton.setDisable(true);
         };
         Runnable r2 = () -> {
             for (int i = 1; i <= 800; i++) {

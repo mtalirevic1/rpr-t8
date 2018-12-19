@@ -27,9 +27,9 @@
     </rowConstraints>
     <children>
         <Label alignment="CENTER" prefHeight="17.0" prefWidth="164.0" text="Ime i prezime:" />
-        <TextField GridPane.columnIndex="1" />
-        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <TextField fx:id="ime" GridPane.columnIndex="1" />
+        <TextField fx:id="adresa" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <TextField fx:id="grad" GridPane.columnIndex="1" GridPane.rowIndex="2" />
         <Label alignment="CENTER" prefHeight="17.0" prefWidth="99.0" text="Adresa:" GridPane.rowIndex="1" />
         <Label alignment="CENTER" prefHeight="17.0" prefWidth="99.0" text="Grad:" GridPane.rowIndex="2" />
         <Label alignment="CENTER" prefHeight="17.0" prefWidth="103.0" text="Poštanski broj:" GridPane.rowIndex="3" />
